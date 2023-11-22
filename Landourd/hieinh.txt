@@ -1,0 +1,46 @@
+public class hieinh {
+    public static void main(String[] args) {
+        // Create an instance of Dog
+        Dog myDog = new Dog();
+
+        // Call methods from the superclass and subclass
+        myDog.eat();
+        myDog.sleep();
+        myDog.bark();
+
+        System.out.println();
+
+        // Create an instance of Cat
+        Cat myCat = new Cat();
+
+        // Call methods from the superclass and subclass
+        myCat.eat();
+        myCat.sleep();
+        myCat.meow();
+    }
+}
+// Superclass
+class Animal {
+    void eat() {
+        System.out.println("This animal eats food.");
+    }
+
+    void sleep() {
+        System.out.println("This animal sleeps.");
+    }
+}
+
+// First subclass
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Woof! Woof!");
+    }
+}
+
+// Second subclass
+class Cat extends Animal {
+    void meow() {
+        System.out.println("Meow! Meow!");
+    }
+}
+

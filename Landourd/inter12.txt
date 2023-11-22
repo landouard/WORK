@@ -1,0 +1,60 @@
+public class inter12 {
+    public static void main(String[] args) {
+        // Create instances of Circle and Rectangle
+        Circle myCircle = new Circle(5);
+        Rectangle myRectangle = new Rectangle(4, 6);
+
+        // Use interface methods to calculate area and perimeter
+        System.out.println("Circle Area: " + myCircle.calculateArea());
+        System.out.println("Circle Perimeter: " + myCircle.calculatePerimeter());
+
+        System.out.println("Rectangle Area: " + myRectangle.calculateArea());
+        System.out.println("Rectangle Perimeter: " + myRectangle.calculatePerimeter());
+    }
+}
+// Interface for a shape
+interface Shape {
+    double calculateArea();  // Abstract method
+    double calculatePerimeter();  // Abstract method
+}
+
+// Class representing a Circle
+class Circle implements Shape {
+    private double radius;
+
+    // Constructor
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    // Implementing interface methods
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+
+    public double calculatePerimeter() {
+        return 2 * Math.PI * radius;
+    }
+}
+
+// Class representing a Rectangle
+class Rectangle implements Shape {
+    private double length;
+    private double width;
+
+    // Constructor
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    // Implementing interface methods
+    public double calculateArea() {
+        return length * width;
+    }
+
+    public double calculatePerimeter() {
+        return 2 * (length + width);
+    }
+}
+

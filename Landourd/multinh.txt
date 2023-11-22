@@ -1,0 +1,55 @@
+
+public class multinh{
+    public static void main(String[] args) {
+        // Create an instance of FlyingDog
+        FlyingDog myFlyingDog = new FlyingDog();
+
+        // Call methods from the superclass
+        myFlyingDog.eat();
+        myFlyingDog.sleep();
+
+        // Call method from the subclass
+        myFlyingDog.bark();
+
+        // Call methods from interfaces
+        myFlyingDog.swim();
+        myFlyingDog.fly();
+    }
+}
+// First interface
+interface Swimmable {
+    void swim();
+}
+
+// Second interface
+interface Flying {
+    void fly();
+}
+
+// Superclass
+class Animal {
+    void eat() {
+        System.out.println("This animal eats food.");
+    }
+
+    void sleep() {
+        System.out.println("This animal sleeps.");
+    }
+}
+
+// Subclass implementing multiple interfaces
+class FlyingDog extends Animal implements Swimmable, Flying {
+    void bark() {
+        System.out.println("Woof! Woof!");
+    }
+
+    // Implement methods from Swimmable interface
+    public void swim() {
+        System.out.println("This dog can swim.");
+    }
+
+    // Implement methods from Flying interface
+    public void fly() {
+        System.out.println("This dog can fly.");
+    }
+}
